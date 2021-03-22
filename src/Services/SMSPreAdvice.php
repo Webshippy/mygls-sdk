@@ -24,7 +24,7 @@ class SMSPreAdvice implements Service
         return [
             'Code' => 'SM2',
             'SM2Parameter' => [
-                'StringValue' => $this->phoneNumber,
+                'Value' => $this->phoneNumber,
             ],
         ];
     }

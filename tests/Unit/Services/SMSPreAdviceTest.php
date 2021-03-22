@@ -15,7 +15,7 @@ class SMSPreAdviceTest extends TestCase
         $this->assertEquals([
             'Code' => 'SM2',
             'SM2Parameter' => [
-                'StringValue' => '+3630123456789',
+                'Value' => '+3630123456789',
             ],
         ], $service->toArray());
     }
