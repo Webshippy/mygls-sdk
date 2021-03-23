@@ -17,8 +17,8 @@ class AgreementAboutDangerousGoodsByRoadTest extends TestCase
         $this->assertSame([
             'Code'         => 'ADR',
             'ADRParameter' => [
-                'AdrItemType' => 5,
-                'AmountUnit'  => 2,
+                'AdrItemType' => 2,
+                'AmountUnit'  => 5,
                 'InnerCount'  => 1,
                 'PackSize'    => 1,
                 'UnNumber'    => 1002,
