@@ -3,6 +3,8 @@
 namespace Webapix\GLS\Services;
 
 use Webapix\GLS\Contracts\Service;
+use Webapix\GLS\Enums\ADRItemType;
+use Webapix\GLS\Enums\ADRAmountUnit;
 
 /**
  * AgreementAboutDangerousGoodsByRoad Service.
@@ -10,12 +12,12 @@ use Webapix\GLS\Contracts\Service;
 class AgreementAboutDangerousGoodsByRoad implements Service
 {
     /**
-     * @var int
+     * @var ADRAmountUnit
      */
     private $itemType;
 
     /**
-     * @var int
+     * @var ADRItemType
      */
     private $amountUnit;
 
@@ -34,7 +36,13 @@ class AgreementAboutDangerousGoodsByRoad implements Service
      */
     private $unNumber;
 
-    public function __construct(int $itemType, int $amountUnit, int $innerCount, int $packSize, int $unNumber)
+    public function __construct(
+        ADRItemType $itemType,
+        ADRAmountUnit $amountUnit,
+        int $innerCount,
+        int $packSize,
+        int $unNumber
+    )
     {
         $this->itemType = $itemType;
         $this->amountUnit = $amountUnit;
@@ -48,8 +56,8 @@ class AgreementAboutDangerousGoodsByRoad implements Service
         return [
             'Code' => 'ADR',
             'ADRParameter' => [
-                'AdrItemType' => $this->itemType,
-                'AmountUnit' => $this->amountUnit,
+                'AdrItemType' => intval((string)$this->itemType),
+                'AmountUnit' => intval((string)$this->amountUnit),
                 'InnerCount' => $this->innerCount,
                 'PackSize' => $this->packSize,
                 'UnNumber' => $this->unNumber,
